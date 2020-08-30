@@ -22,12 +22,15 @@ jobs:
         env:
           NODE_ENV: production
         run: yarn build
-      - name: Deploy
+      - name: Commit Files
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          cd public && git init
-          git add . && git commit -m "Publish site"
-          git remote add origin https://github.com/chet20r/chet20r.github.io.git
-          git branch -M master
-          git push -u origin master
+          cd public
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Site Build" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        force: true
+        repository: https://github.com/chet20r/chet20r.github.io
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
