@@ -32,6 +32,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PROFILE_PUSH_ACCESS_TOKEN }}
           force: true
           repository: chet20r/chet20r.github.io
