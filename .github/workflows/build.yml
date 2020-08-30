@@ -27,6 +27,10 @@ jobs:
           cd public
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Site Build" -a
-          git branch -M master
-          git push https://chet20r:${{secrets.PROFILE_PUSH_ACCESS_TOKEN}}@chet20r.github.io.git
+          git init && git add . && git commit -m "Site Build"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+          repository: https://github.com/chet20r/chet20r.github.io.git
