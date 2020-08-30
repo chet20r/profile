@@ -25,9 +25,10 @@ jobs:
       - name: Commit Files
         run: |
           cd public
+          git init
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git init && git add . && git commit -m "Site Build"
+          git add . && git commit -m "Site Build"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
