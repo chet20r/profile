@@ -28,10 +28,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Site Build" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        inputs:
-          force: true
-          repository: https://github.com/chet20r/chet20r.github.io
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git branch -M master
+          git push https://chet20r:${{secrets.PROFILE_PUSH_ACCESS_TOKEN}}@chet20r.github.io.git
