@@ -30,7 +30,8 @@ jobs:
           git commit -m "Site Build" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
-        force: true
-        repository: https://github.com/chet20r/chet20r.github.io
+        inputs:
+          force: true
+          repository: https://github.com/chet20r/chet20r.github.io
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
