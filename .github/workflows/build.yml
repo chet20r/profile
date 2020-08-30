@@ -22,16 +22,12 @@ jobs:
         env:
           NODE_ENV: production
         run: yarn build
-      - name: Commit Files
+      - name: Commit & Publish
         run: |
           cd public
           git init
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add . && git commit -m "Site Build"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PROFILE_PUSH_ACCESS_TOKEN }}
-          force: true
-          repository: chet20r/chet20r.github.io
+          remote_repo="https://${GITHUB_ACTOR}:${{secrets.PROFILE_PUSH_ACCESS_TOKEN}}@github.com/chet20r/chet20r.github.io.git"
+          git push "${remote_repo}" HEAD:master --force
