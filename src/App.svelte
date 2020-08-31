@@ -1,14 +1,14 @@
 <script lang="ts">
-  import Tailwindcss from "./Tailwindcss.svelte";
-  import Header from "./components/Header.svelte";
-  import ProfileSummary from "./components/ProfileSummary.svelte";
+  import Tailwindcss from './Tailwindcss.svelte';
+  import Header from './components/Header.svelte';
+  import ProfileSummary from './components/ProfileSummary.svelte';
 </script>
 
 <style>
 
 </style>
 
-<main class="md:m-4 lg:m-12 my-4">
+<main class="md:m-4 lg:m-12 my-4 leading-relaxed">
   <Header />
 
   <ProfileSummary />

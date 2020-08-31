@@ -1,17 +1,17 @@
 const plugin = require('tailwindcss/plugin');
 
 const darkTheme = {
-  '--color-bg-primary': '#c0b283',
-  '--color-bg-secondary': '#dcd0c0',
-  '--color-bg-default': '#f4f4f4',
-  '--color-bg-inverse': '#373737',
+  '--color-bg-primary': '#393e46',
+  '--color-bg-secondary': '#222831',
+  '--color-bg-default': '#393e46',
+  '--color-bg-inverse': '#eeeeee',
 
-  '--color-text-primary': '#fff',
-  '--color-text-secondary': '#927e7e',
-  '--color-text-default': '#373737',
-  '--color-text-default-soft': '#6a6a6a',
-  '--color-text-inverse': '#fff',
-  '--color-text-inverse-soft': '#bbb',
+  '--color-text-primary': '#32e0c4',
+  '--color-text-secondary': '#eeeeee',
+  '--color-text-default': '#32e0c4',
+  '--color-text-default-soft': '#32e0c4',
+  '--color-text-inverse': '#222831',
+  '--color-text-inverse-soft': '#222831',
 
   '--font-heading': 'Roboto, sans-serif',
   '--font-body': '"Open Sans", sans-serif',
@@ -19,30 +19,26 @@ const darkTheme = {
   '--font-weight-normal': 400,
   '--font-weight-display': 400,
   '--font-weight-btn': 600,
-
-  '--rounded-btn': 0,
 };
 
 const lightTheme = {
-  '--color-bg-primary': '#ff73b3',
-  '--color-bg-secondary': '#6f72b9',
-  '--color-bg-default': '#fff',
-  '--color-bg-inverse': '#cfd8dc',
+  '--color-bg-primary': '#eeeeee',
+  '--color-bg-secondary': '#393e46',
+  '--color-bg-default': '#eeeeee',
+  '--color-bg-inverse': '#222831',
 
-  '--color-text-primary': '#000',
-  '--color-text-secondary': '#44467b',
-  '--color-text-default': '#373737',
-  '--color-text-default-soft': '#6a6a6a',
-  '--color-text-inverse': '#fff',
+  '--color-text-primary': '#fc5185',
+  '--color-text-secondary': '#393e46',
+  '--color-text-default': '#fc5185',
+  '--color-text-default-soft': '#f67280',
+  '--color-text-inverse': '#00adb5',
 
-  '--font-heading': 'Ubuntu, sans-serif',
+  '--font-heading': 'Roboto, sans-serif',
   '--font-body': '"Open Sans", sans-serif',
-  '--font-family': 'Ubuntu, "Open Sans", sans-serif',
+  '--font-family': 'Roboto, "Open Sans", sans-serif',
   '--font-weight-normal': 400,
   '--font-weight-display': 400,
   '--font-weight-btn': 600,
-
-  '--rounded-btn': 1,
 };
 
 module.exports = {
@@ -78,24 +74,23 @@ module.exports = {
       default: 'var(--color-bg-default)',
       inverse: 'var(--color-bg-inverse)',
     },
-    borderRadius: {
-      none: '0',
-      btn: 'var(--rounded-btn)',
-    },
     extend: {},
   },
-  variants: {},
+  variants: {
+    textColor: ['responsive', 'hover', 'focus', 'visited'],
+  },
   plugins: [
     plugin(({ addBase, addUtilities, theme }) => {
       const baseStyles = {
+        '*': {
+          transition: 'all 300ms ease',
+        },
         body: {
-          background: theme('backgroundColor.inverse'),
-          transition: 'background 600ms linear',
-          color: theme('textColor.secondary'),
+          background: theme('backgroundColor.primary'),
+          color: theme('textColor.primary'),
           'font-family': 'var(--font-family)',
         },
       };
-
       const utilities = {
         '.theme-dark': darkTheme,
         ':root': lightTheme,
