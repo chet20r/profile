@@ -10,7 +10,7 @@
   <div class="w-1/3">
     <a href="https://github.com/chet20r" class="">
       <svg
-        class="fill-current w-10 h-10 block mx-auto"
+        class="fill-current hover:text-secondary w-10 h-10 block mx-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20">
         <title>GitHub</title>
@@ -28,7 +28,7 @@
   <div class="w-1/3">
     <a href="https://twitter.com/chet20r">
       <svg
-        class="fill-current w-10 h-10 block mx-auto"
+        class="fill-current hover:text-secondary w-10 h-10 block mx-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20">
         <title>Twitter</title>
@@ -44,7 +44,7 @@
   <div class="w-1/3">
     <a href="https://www.linkedin.com/in/chetanraju">
       <svg
-        class="fill-current w-10 h-10 block mx-auto"
+        class="fill-current hover:text-secondary w-10 h-10 block mx-auto"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 50 512 512">
         <title>LinkedIn</title>
