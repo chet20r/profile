@@ -70,6 +70,7 @@ module.exports = {
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'visited'],
+    animation: ['responsive', 'hover', 'focus'],
   },
   plugins: [
     plugin(({ addBase, addUtilities, theme }) => {
