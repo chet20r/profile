@@ -17,8 +17,7 @@
 <header class="flex items-center justify-end flex-wrap m-4">
   <nav class="">
     <div class="flex mb-4">
-      <div class="w-1/4 bg-gray-400 h-12" />
-      <div class="w-3/4 bg-gray-500 h-12 text-right">
+      <div class="w-full bg-gray-500 text-right">
         <button class="border-0" on:click={toggleDarkMode} aria-label="Toggle Dark Mode">
           {#if toggle}
             <svg
