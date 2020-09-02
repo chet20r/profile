@@ -9,9 +9,8 @@ const darkTheme = {
   '--color-text-secondary': '#eeeeee',
   '--color-text-inverse': '#222831',
 
-  '--font-heading': 'Roboto, sans-serif',
-  '--font-body': '"Open Sans", sans-serif',
-  '--font-family': 'Roboto, "Open Sans", sans-serif',
+  '--font-sans': 'Ubuntu, "Open Sans", sans-serif',
+  '--font-mono': '"Ubuntu Mono", monospace',
   '--font-weight-normal': 400,
   '--font-weight-display': 400,
   '--font-weight-btn': 600,
@@ -26,9 +25,8 @@ const lightTheme = {
   '--color-text-secondary': '#393e46',
   '--color-text-inverse': '#00adb5',
 
-  '--font-heading': 'Roboto, sans-serif',
-  '--font-body': '"Open Sans", sans-serif',
-  '--font-family': 'Roboto, "Open Sans", sans-serif',
+  '--font-sans': 'Ubuntu, "Open Sans", sans-serif',
+  '--font-mono': '"Ubuntu Mono", monospace',
   '--font-weight-normal': 400,
   '--font-weight-display': 400,
   '--font-weight-btn': 600,
@@ -45,6 +43,10 @@ module.exports = {
   },
   theme: {
     colors: {},
+    fontFamily: {
+      sans: 'var(--font-sans)',
+      mono: 'var(--font-mono)',
+    },
     fontWeights: {
       normal: 'var(--font-weight-normal)',
       display: 'var(--font-weight-display)',
@@ -61,12 +63,7 @@ module.exports = {
       secondary: 'var(--color-bg-secondary)',
       inverse: 'var(--color-bg-inverse)',
     },
-    extend: {
-      fontFamily: {
-        heading: 'var(--font-heading)',
-        body: 'var(--font-body)',
-      },
-    },
+    extend: {},
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'visited'],
